@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   return (
-    <div className=" flex justify-between p-6 backdrop-blur-sm items-center px-16 mb-4 ">
+    <div className=" flex justify-between sticky p-6 backdrop-blur-sm items-center px-16 mb-4 ">
       <motion.div
         initial={{ opacity: 0, x: 200 }}
         animate={{ opacity: 1, x: 0 }}
@@ -60,8 +60,8 @@ export default function Navbar() {
           >
             <div className=" flex items-center relative ">
              
-            <IoMdBasket />
-            <p className=" flex items-center absolute  right-[-6px] top-[-6px] justify-center p-2 bg-red-600 rounded-[100px] text-white text-[14px] h-4 w-4 ">0</p>
+            <IoMdBasket className=" text-[24px] " />
+            <p className=" flex items-center absolute  right-[-4px] top-[-4px] justify-center p-2 bg-red-600 rounded-[100px] text-white text-[14px] h-4 w-4 ">0</p>
             </div>
             
             
