@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function AllDish() {
   return (
     <div>
-        <div className=" bg-[#f5eee9] mb-20 px-1 py-3 rounded-sm flex flex-wrap mx-12 justify-center gap-4 items-center    ">
+        <div className=" container bg-[#f5eee9] mb-10 lg:mb-20  lg:px-1 py-3 rounded-sm flex flex-wrap mx-auto lg:mx-12 justify-center gap-4 items-center    ">
         {AllData.map(({ id, heading, text, price, image }) => {
           return (
             <motion.div whileTap={{ rotate: [0, -1, 1, -1, 0] }} key={id} className=" bg-white  my-10 rounded-sm  w-[310px] h-[235px]   ">

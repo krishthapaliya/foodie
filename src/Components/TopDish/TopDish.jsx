@@ -63,16 +63,16 @@ const HotDish = [
 
 export default function TopDish() {
   return (
-    <div className=" mx-12 mt-24 mb-28 ">
+    <div className=" mx-2 lg:mx-12 mt-24 mb-28 ">
       <h1 className=" text-[24px] mb-10 flex flex-col justify-center items-center ">
         Our Hot Dishes
       </h1>
-      <div className=" flex justify-center gap-7  ">
+      <div className=" flex justify-start gap-3  lg:gap-7 overflow-x-scroll scrollbar-hidden  scroll-smooth  ">
         {HotDish.map(({ id, icons, title }) => {
           return (
             <div
               key={id}
-              className="flex flex-col gap-4 items-center px-4 py-5 group hover:bg-red-500 bg-white shadow-lg border rounded-[8px] w-[100px] h-[115px]"
+              className="flex flex-col gap-4 items-center px-4 py-5 group hover:bg-red-500 bg-white shadow-lg border rounded-[8px] min-w-[100px] min-h-[115px]"
             >
               <div className="p-2 bg-red-500 group-hover:bg-[#faccd0] group-hover:text-black text-white rounded-full text-[22px]">
                 {icons}

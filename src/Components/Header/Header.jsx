@@ -52,34 +52,35 @@ const DataShowCase = [
 export default function Header() {
   return (
     <>
-      <div className=" flex justify-start mx-12 ">
-        <div className=" grid gap-3 mt-16 justify-start  ">
+      <div className=" container ml-4 sm:ml-0 flex flex-col sm:flex-row  gap-6 sm:gap-0 justify-start  ">
+        <div className=" grid gap-3 mt-5 sm:mt-16 justify-start  ">
           <div className="flex  p-1 px-2 bg-yellow-100 rounded-[10px] items-center gap-2  w-fit">
-            <p className=" text-orange-600  font-bold text-[16px] ">
+            <p className=" text-orange-600  font-bold text-sm sm:text-[16px] ">
               Bike Delivery
             </p>
             <img
               src={imageDelivery}
               alt="deliveryman"
-              className=" w-[30px] h-[30px]  rounded-full  bg-white "
+              className=" w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]  rounded-full  bg-white "
             />
           </div>
-          <h1 className=" font-bold text-[64px] w-[590px] ">
-            The Fastest Food Delivery in{" "}
+          <h1 className=" font-bold text-[24px] sm:text-[64px]  sm:w-[590px] ">
+            <span className=" bg-gradient-to-r from-orange-700 font-bold to-orange-500 text-transparent bg-clip-text ">The Fastest </span>
+             Food Delivery in{" "}
             <span className="bg-gradient-to-r from-orange-700 font-bold to-orange-500 text-transparent bg-clip-text ">
               Nepal
             </span>{" "}
           </h1>
-          <p className=" w-[500px] text-[16px] text-gray-700 text-justify ">
+          <p className="  flex px-3 flex-wrap text-[16px]   sm:w-[500px] sm:text-[16px] text-gray-600  text-justify sm:text-justify ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            eius maxime debitis ad sed. Id eveniet itaque adipisci dolore esse,
+            eius maxime debitis  ad sed. Id eveniet itaque adipisci dolore esse,
             mollitia commodi temporibus provident officia sapiente aliquid
             repellat quasi.
           </p>
           <div>
             <motion.button
               whileHover={{ scale: 1.1 }}
-              className=" p-1 px-2  text-[20px] text-black bg bg-gradient-to-r from-orange-300  rounded-[7px] to-orange-400 "
+              className=" p-1  w-[95%] mx-auto sm:mx-0 sm:w-auto px-2 flex justify-center  text-[20px] text-black bg bg-gradient-to-r from-orange-300  rounded-[7px] to-orange-400 "
             >
               Order Now
             </motion.button>
@@ -88,30 +89,30 @@ export default function Header() {
 
         {/* for the foodshows case */}
 
-        <div className="flex justify-between relative">
-          <div className=" absolute right-[-20px] w-[350px]  ">
-            <img src={image1} alt="background" className="  " />
+        <div className="flex  justify-between relative">
+          <div className="  ">
+            <img src={image1} alt="background" className=" absolute  right-[18px] h-[440px]  sm:h-auto sm:right-[-20px] w-[95%]  sm:w-[350px]  " />
           </div>
 
-          <div className=" flex flex-wrap justify-center gap-8 mt-14 ml-36 ">
+          <div className=" flex flex-wrap justify-center gap-5 lg:gap-8 mt-14 lg:ml-28 ">
             {DataShowCase.map(({ id, heading, text, icons, price, dish }) => {
               return (
                 <div
                   key={id}
-                  className=" w-[200px]  h-[210px] backdrop-blur-2xl shadow-lg relative rounded-[15px] "
+                  className=" w-[140px] h-[160px] sm:w-[200px] mb-8 sm:mb-0  sm:h-[210px] backdrop-blur-2xl shadow-lg relative rounded-[15px] "
                 >
                   <motion.img
                     src={dish}
                     whileHover={{ scale: 1.1 }}
                     alt="iceCream"
-                    className=" absolute w-36  z-50 items-center right-[30px] top-[-50px] "
+                    className=" absolute w-24 sm:w-36  z-50 items-center right-[30px] top-[-50px] "
                   />
-                  <div className=" flex flex-col gap-4 justify-center  items-center pt-24 ">
+                  <div className=" flex flex-col gap-4 justify-center  items-center pt-12 lg:pt-24 ">
                     <h1 className=" font-semibold ">{heading}</h1>
-                    <p className=" font-semibold text-gray-400 text-[18px] ">
+                    <p className=" font-semibold text-gray-400 text-sm sm:text-[18px] ">
                       {text}
                     </p>
-                    <div className=" flex gap-2 ">
+                    <div className=" flex gap-2 text-sm sm:text-[16px] ">
                       <span className=" text-orange-500 ">{icons}</span>
                       <p>{price}</p>
                     </div>
@@ -124,8 +125,8 @@ export default function Header() {
       </div>
 
       <div className=" flex mx-12 mt-[70px] mb-[50px] justify-between items-center ">
-        <p className=" text-[24px] ">Our Fresh & Healthy Fruits</p>
-        <div className=" flex items-center gap-3 ">
+        <p className="  text-[20px] lg:text-[24px] ">Our Fresh & Healthy Fruits</p>
+        <div className="  items-center gap-3 hidden lg:flex">
           <span
             whileHover={{ scale: 1.1 }}
             className="  text-white p-2 bg-orange-400 hover:bg-orange-600  rounded-[5px] "
