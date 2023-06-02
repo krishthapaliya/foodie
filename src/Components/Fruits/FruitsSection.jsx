@@ -41,10 +41,10 @@ const FruitsSection3 = [
 export default function FruitsSection() {
   return (
     <div className=" ">
-      <div className=" bg-[#f5eee9] mb-20 px-1 py-3 flex mx-12 justify-center gap-4 items-center overflow-scroll   ">
+      <div className=" bg-[#f5eee9] mb-20 px-1 py-3 flex mx-12 justify-center gap-4 items-center    ">
         {FruitsSection3.map(({ id, heading, text, price, image }) => {
           return (
-            <div key={id} className=" bg-white  w-[310px]  ">
+            <div key={id} className=" bg-white  w-[310px] h-[235px]  ">
               <div className=" flex justify-between items-center px-4 ">
                 <motion.div whileHover={{ scale: 1.1 }}>
                   <img src={image} alt="berries" className=" w-48 h-36 " />
@@ -56,7 +56,7 @@ export default function FruitsSection() {
               <div className=" flex flex-col gap-2 justify-end items-end  pb-3 pr-3  ">
                 <p>{heading}</p>
                 <span className=" text-gray-400 text-[14px] ">{text}</span>
-                <div className=" flex gap-2 ">
+                <div className=" flex gap-1 ">
                   <span className=" text-orange-500 ">$ </span>
                   <p>{price}</p>
                 </div>

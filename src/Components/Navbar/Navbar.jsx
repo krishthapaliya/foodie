@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   return (
-    <div className=" flex justify-between sticky p-6 backdrop-blur-sm items-center px-16 mb-4 ">
-      <motion.div
+    <div className="flex justify-between p-6 backdrop-blur-lg items-center px-16 mb-4 sticky top-0  z-10">
+  <motion.div
         initial={{ opacity: 0, x: 200 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 200 }}
