@@ -52,7 +52,7 @@ const DataShowCase = [
 export default function Header() {
   return (
     <>
-      <div className=" container ml-4 sm:ml-0 flex flex-col xl:flex-row  gap-6 sm:gap-0 justify-start  ">
+      <div className=" container ml-4 xl:ml-0 flex flex-col xl:flex-row  gap-6 sm:gap-0 justify-start  ">
         <div className=" grid gap-3 mt-5 sm:mt-16 justify-start  ">
           <div className="flex  p-1 px-2 bg-yellow-100 rounded-[10px] items-center gap-2  w-fit">
             <p className=" text-orange-600  font-bold text-sm sm:text-[16px] ">
@@ -80,7 +80,7 @@ export default function Header() {
           <div>
             <motion.button
               whileHover={{ scale: 1.1 }}
-              className=" p-1  w-[95%] mx-auto xl:mx-0 xl:w-auto px-2 flex justify-center  text-[20px] text-black bg bg-gradient-to-r from-orange-300  rounded-[7px] to-orange-400 "
+              className=" p-1  w-[95%] mx-auto xl:mx-0 xl:w-auto px-2 sm:mb-8 xl:mb-auto flex justify-center  text-[20px] text-black bg bg-gradient-to-r from-orange-300  rounded-[7px] to-orange-400 "
             >
               Order Now
             </motion.button>
@@ -94,12 +94,12 @@ export default function Header() {
             <img src={image1} alt="background" className=" absolute  right-[18px] h-[440px]  xl:h-auto xl:right-[-20px] w-[95%]  xl:w-[350px]  " />
           </div>
 
-          <div className=" flex flex-wrap justify-center gap-5 lg:gap-8 mt-14 xl:ml-28 ">
+          <div className=" flex flex-wrap justify-center gap-5 md:gap-8 lg:gap-8 mt-14  xl:ml-28 ">
             {DataShowCase.map(({ id, heading, text, icons, price, dish }) => {
               return (
                 <div
                   key={id}
-                  className=" w-[140px] h-[160px] sm:w-[200px] mb-8 xl:mb-0 sm:min-h-[210]  sm:h-[210px] backdrop-blur-2xl shadow-lg relative rounded-[15px] "
+                  className=" w-[140px] h-[160px] lg:w-[200px] mb-8 xl:mb-0  lg:h-[210px] backdrop-blur-2xl shadow-lg relative rounded-[15px] "
                 >
                   <motion.img
                     src={dish}

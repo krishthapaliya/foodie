@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
 
       </div>
-      <div className=' container   xl:w-[90%] xl:mx-auto '>
+      <div className=' container w-[90%] mx-auto '>
       <Header />
        <FruitsSection />
       <TopDish />
