@@ -41,7 +41,7 @@ export default function Navbar() {
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 200 }}
-          className={`sm:flex items-center hidden  gap-8 `}
+          className={`xl:flex items-center hidden  gap-8 `}
         >
           <motion.li
             whileHover={{ scale: 1.1 }}

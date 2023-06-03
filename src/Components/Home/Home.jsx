@@ -10,11 +10,11 @@ import AllDish from '../AllDish/AllDish';
 export default function Home() {
   return (
     <div  className=' container '>
-      <div className='w-[104%] sticky top-0 z-10 '>
+      <div className='w-[100%] sticky top-0 z-10 '>
       <Navbar />
 
       </div>
-      <div className=' container  sm:w-[90%] sm:mx-auto '>
+      <div className=' container   xl:w-[90%] xl:mx-auto '>
       <Header />
        <FruitsSection />
       <TopDish />

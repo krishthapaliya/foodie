@@ -52,7 +52,7 @@ const DataShowCase = [
 export default function Header() {
   return (
     <>
-      <div className=" container ml-4 sm:ml-0 flex flex-col sm:flex-row  gap-6 sm:gap-0 justify-start  ">
+      <div className=" container ml-4 sm:ml-0 flex flex-col xl:flex-row  gap-6 sm:gap-0 justify-start  ">
         <div className=" grid gap-3 mt-5 sm:mt-16 justify-start  ">
           <div className="flex  p-1 px-2 bg-yellow-100 rounded-[10px] items-center gap-2  w-fit">
             <p className=" text-orange-600  font-bold text-sm sm:text-[16px] ">
@@ -64,14 +64,14 @@ export default function Header() {
               className=" w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]  rounded-full  bg-white "
             />
           </div>
-          <h1 className=" font-bold text-[24px] sm:text-[64px]  sm:w-[590px] ">
+          <h1 className=" font-bold text-[24px] sm:text-[40px] xl:text-[64px]  xl:w-[590px] ">
             <span className=" bg-gradient-to-r from-orange-700 font-bold to-orange-500 text-transparent bg-clip-text ">The Fastest </span>
              Food Delivery in{" "}
             <span className="bg-gradient-to-r from-orange-700 font-bold to-orange-500 text-transparent bg-clip-text ">
               Nepal
             </span>{" "}
           </h1>
-          <p className="  flex px-3 flex-wrap text-[16px]   sm:w-[500px] sm:text-[16px] text-gray-600  text-justify sm:text-justify ">
+          <p className="  flex px-3 flex-wrap text-[16px] sm:text-[20px]   xl:w-[500px] xl:text-[16px] text-gray-600  text-justify  xl:text-justify ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
             eius maxime debitis  ad sed. Id eveniet itaque adipisci dolore esse,
             mollitia commodi temporibus provident officia sapiente aliquid
@@ -80,7 +80,7 @@ export default function Header() {
           <div>
             <motion.button
               whileHover={{ scale: 1.1 }}
-              className=" p-1  w-[95%] mx-auto sm:mx-0 sm:w-auto px-2 flex justify-center  text-[20px] text-black bg bg-gradient-to-r from-orange-300  rounded-[7px] to-orange-400 "
+              className=" p-1  w-[95%] mx-auto xl:mx-0 xl:w-auto px-2 flex justify-center  text-[20px] text-black bg bg-gradient-to-r from-orange-300  rounded-[7px] to-orange-400 "
             >
               Order Now
             </motion.button>
@@ -89,17 +89,17 @@ export default function Header() {
 
         {/* for the foodshows case */}
 
-        <div className="flex  justify-between relative">
+        <div className="flex  justify-center xl:justify-between relative">
           <div className="  ">
-            <img src={image1} alt="background" className=" absolute  right-[18px] h-[440px]  sm:h-auto sm:right-[-20px] w-[95%]  sm:w-[350px]  " />
+            <img src={image1} alt="background" className=" absolute  right-[18px] h-[440px]  xl:h-auto xl:right-[-20px] w-[95%]  xl:w-[350px]  " />
           </div>
 
-          <div className=" flex flex-wrap justify-center gap-5 lg:gap-8 mt-14 lg:ml-28 ">
+          <div className=" flex flex-wrap justify-center gap-5 lg:gap-8 mt-14 xl:ml-28 ">
             {DataShowCase.map(({ id, heading, text, icons, price, dish }) => {
               return (
                 <div
                   key={id}
-                  className=" w-[140px] h-[160px] sm:w-[200px] mb-8 sm:mb-0  sm:h-[210px] backdrop-blur-2xl shadow-lg relative rounded-[15px] "
+                  className=" w-[140px] h-[160px] sm:w-[200px] mb-8 xl:mb-0 sm:min-h-[210]  sm:h-[210px] backdrop-blur-2xl shadow-lg relative rounded-[15px] "
                 >
                   <motion.img
                     src={dish}

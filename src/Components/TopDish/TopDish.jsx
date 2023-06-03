@@ -67,7 +67,7 @@ export default function TopDish() {
       <h1 className=" text-[24px] mb-10 flex flex-col justify-center items-center ">
         Our Hot Dishes
       </h1>
-      <div className=" flex justify-start gap-3  lg:gap-7 overflow-x-scroll scrollbar-hidden  scroll-smooth  ">
+      <div className=" flex justify-start gap-3 lg:justify-center lg:gap-7 overflow-x-scroll scrollbar-hidden  scroll-smooth  ">
         {HotDish.map(({ id, icons, title }) => {
           return (
             <div
