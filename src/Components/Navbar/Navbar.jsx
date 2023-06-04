@@ -5,10 +5,16 @@ import { motion } from "framer-motion";
 // import { HiOutlineBars3BottomLeft } from "react-icons/hi";
 
 import { HiBars3BottomLeft } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const buttonClick =props.isClicked;
+  const buttonClick2 =props.isShow;
+  const MenuShowButton = props.isMenuShow;
+
+  
   return (
-    <div className=" container flex justify-between p-3  sm:p-6 backdrop-blur-lg items-center  sm:mb-4  sticky top-0  z-10">
+    <div className=" container flex justify-between p-3  sm:p-6 backdrop-blur-lg items-center  sm:mb-4  sticky top-0  z-40">
       <motion.div
         initial={{ opacity: 0, x: 200 }}
         animate={{ opacity: 1, x: 0 }}
@@ -17,7 +23,7 @@ export default function Navbar() {
       >
         <motion.div whileHover={{ scale: 1.1 }} >
 
-        <HiBars3BottomLeft  />
+        <HiBars3BottomLeft onClick={MenuShowButton}  />
         </motion.div>
       </motion.div>
 
@@ -32,7 +38,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.1 }}
           className=" font-semibold text-[24px]  bg-gradient-to-r from-red-700 to-red-500 text-transparent bg-clip-text "
         >
-          Foodie
+          <Link to="/">Foodie</Link>          
         </motion.h1>
       </motion.div>
 
@@ -41,47 +47,48 @@ export default function Navbar() {
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 200 }}
-          className={`xl:flex items-center hidden  gap-8 `}
+          className={`lg:flex items-center hidden  gap-8 `}
         >
           <motion.li
             whileHover={{ scale: 1.1 }}
             className="lg:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
           >
-            <p>Home</p>
+             <p> <Link to='/'> Home</Link></p>
+         
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.1 }}
             className="lg:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
           >
-            <p>Menu</p>
+            <p> <Link to='/menu'>Menu</Link></p>
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.1 }}
             className="lg:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
           >
-            <p>Services</p>
+             <p> <Link to='/services'>Services</Link></p>
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.1 }}
             className="lg:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
           >
-            <p>About us</p>
+            <p> <Link to='/about'>About us</Link></p>
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.1 }}
             className="lg:text-sm lg:text-md text-base font text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
           >
-            Contact us
+            <p onClick={buttonClick2}> Contact us</p>
           </motion.li>
 
           <motion.li
             whileHover={{ scale: 1.1 }}
             className="lg:text-sm lg:text-[20px] text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
           >
-            <div className=" flex items-center relative ">
+            <div onClick={buttonClick}  className=" flex items-center relative ">
               <IoMdBasket className=" text-[24px] " />
               <p className=" flex items-center absolute  right-[-4px] top-[-4px] justify-center p-2 bg-red-600 rounded-[100px] text-white text-[14px] h-4 w-4 ">
-                0
+                3
               </p>
             </div>
           </motion.li>

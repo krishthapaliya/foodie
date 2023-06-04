@@ -7,15 +7,15 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import imageDelivery from "../../assets/img/delivery.png";
 import image1 from "../../assets/hero-bg.png";
 import image2 from "../../assets/i1.png";
-import fruit from "../../assets/img/f1.png";
-import chicken from "../../assets/img/c3.png";
+import fruit from "../../assets/img/f7.png";
+import chicken from "../../assets/img/r2.png";
 import fish from "../../assets/img/fi3.png";
 
 const DataShowCase = [
   {
     id: 1,
-    heading: "Strawberries",
-    text: "Fresh Strawberries",
+    heading: "Raspberry",
+    text: "Cascade Delight",
     icons: "$",
     price: "10",
     dish: fruit,
@@ -23,8 +23,8 @@ const DataShowCase = [
 
   {
     id: 2,
-    heading: "Chicken",
-    text: "Mixed Kebab",
+    heading: "Classic Pork Fried Rice",
+    text: "Fried Rice and Pork",
     icons: "$",
     price: "20.09",
     dish: chicken,
@@ -107,9 +107,9 @@ export default function Header() {
                     alt="iceCream"
                     className=" absolute w-24 sm:w-36  z-50 items-center right-[30px] top-[-50px] "
                   />
-                  <div className=" flex flex-col gap-4 justify-center  items-center pt-12 lg:pt-24 ">
+                  <div className=" flex flex-col gap-4 justify-center  items-center pt-12 lg:pt-20 ">
                     <h1 className=" font-semibold ">{heading}</h1>
-                    <p className=" font-semibold text-gray-400 text-sm sm:text-[18px] ">
+                    <p className=" font-semibold text-gray-400 text-sm sm:text-[16px] ">
                       {text}
                     </p>
                     <div className=" flex gap-2 text-sm sm:text-[16px] ">

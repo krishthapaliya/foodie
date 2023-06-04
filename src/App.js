@@ -1,13 +1,29 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
+import Cart from "./Components/Cart/Cart";
+import MenuBar from "./Menu/MenuBar";
+import Services from "./Services/Services";
+import AboutUs from "./About us/AboutUs";
 
 
 function App() {
   return (
-    <div className="sm:mx-auto lg:mr-0 xl:mx-0 " >
-    <Home />
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" >
+        <Route index element={<Home />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="about" element={<AboutUs />} />
+        <Route path="menu" element={<MenuBar />} />
+        <Route path="services" element={<Services />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
   );
 }
 
 export default App;
+
+
+
