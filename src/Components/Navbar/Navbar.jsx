@@ -19,7 +19,7 @@ export default function Navbar(props) {
         initial={{ opacity: 0, x: 200 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 200 }}
-        className=" text-[34px] px-2  sm:px-0  sm:hidden"
+        className=" text-[34px] px-2  sm:px-0  lg:hidden"
       >
         <motion.div whileHover={{ scale: 1.1 }} >
 

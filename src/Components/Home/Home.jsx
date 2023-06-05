@@ -7,6 +7,7 @@ import AllDish from "../AllDish/AllDish";
 import Cart from "../Cart/Cart";
 import ContactUs from "../../Contact us/ContactUs";
 import MobileNab from "../MobileNav/MobileNab";
+import CartDetails from "../Cart/CartDetails";
 
 export default function Home() {
   const [showCart, setShowCart] = useState(false);
@@ -43,6 +44,7 @@ export default function Home() {
         <div>{showMenu && <MobileNab hideMenu ={menuHandler} show={clickHandler} />}</div>
         
       </div>
+      <CartDetails />
     </div>
   );
 }

@@ -41,7 +41,8 @@ export default function AllDish() {
           );
         })}
       </div>
-      <CartArray cartItemsObject={cartItems} />
+      <div className="hidden"><CartArray cartItemsObject={cartItems} /></div>
+      
     </div>
   );
 }

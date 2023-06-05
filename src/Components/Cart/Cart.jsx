@@ -5,6 +5,7 @@ import { IoMdBasket } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { motion } from "framer-motion";
 import fruits2 from "../../assets/i1.png";
+import CartArray from "./CartArray";
 
 export default function Cart(props) {
   const cartClose = props.show;
@@ -34,6 +35,11 @@ export default function Cart(props) {
 
       <div className=" w-full h-full rounded-t-[2rem]  bg-cartBg flex flex-col ">
         <div className=" w-full h-[340px] md:h-42 px-0 py-10 flex flex-col gap-3 overflow-y-scroll scrollbar-hidden ">
+          <div className="">
+          <CartArray />
+          </div>
+          
+
           <div className=" flex items-center mx-6 rounded-md bg-[#2e3033] text-sm justify-between ">
             <div className=" flex items-center  text-white  gap-2  ml-5 ">
               <img src={fruits2} alt="ice-cream" className=" w-20 " />
