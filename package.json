@@ -1,7 +1,7 @@
 {
   "name": "fooddelivery",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "http://TheOneAbove0.github.io/Foodie",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
