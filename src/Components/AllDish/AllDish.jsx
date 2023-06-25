@@ -7,12 +7,15 @@ import {usePost} from '../../Context/ContextProvider'
 
 export default function AllDish() {
   // const [cartItems, setCartItems] = useState([]);
-  const {Added, setAdded} = usePost();
+  const {Added, setAdded, addToAdded} = usePost();
 
   const addToCart = (item) => {
     setAdded([...Added, item]);
   };
-  // console.log(cartItems);
+  function clickHandler({ id, heading, text, price, image }) {
+    addToCart({ id, heading, text, price, image });
+    addToAdded({ id, heading, text, price, image });
+  }
 
   return (
     <div>
@@ -27,7 +30,7 @@ export default function AllDish() {
                 <motion.div whileHover={{ scale: 1.1 }}>
                   <MdOutlineAddShoppingCart
                     className="w-10 h-10 p-2 rounded-full bg-red-600 text-white"
-                    onClick={() => addToCart({ id, heading, text, price, image, count: 1 })}
+                    onClick={() => clickHandler({ id, heading, text, price, image }) }
                   />
                 </motion.div>
               </div>
