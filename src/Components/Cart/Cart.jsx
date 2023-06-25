@@ -1,4 +1,3 @@
-import React from "react";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { GiWaterRecycling } from "react-icons/gi";
 import { IoMdBasket } from "react-icons/io";
@@ -6,8 +5,20 @@ import { MdDelete } from "react-icons/md";
 import { motion } from "framer-motion";
 import fruits2 from "../../assets/i1.png";
 import CartArray from "./CartArray";
+import { usePost } from "../../Context/ContextProvider";
+
+
 
 export default function Cart(props) {
+  
+ const{Added} = usePost();
+ const totalPrice = Added.reduce((sum, { price, count }) => {
+  return sum + price * count;
+}, 0);
+
+
+
+ 
   const cartClose = props.show;
   return (
     <motion.div
@@ -40,74 +51,7 @@ export default function Cart(props) {
           </div>
           
 
-          <div className=" flex items-center mx-6 rounded-md bg-[#2e3033] text-sm justify-between ">
-            <div className=" flex items-center  text-white  gap-2  ml-5 ">
-              <img src={fruits2} alt="ice-cream" className=" w-20 " />
-              <div className="flex flex-col">
-                <p>Banana</p>
-                <p>
-                  <span className=" text-[#e80013] ">$</span> 22.99
-                </p>
-              </div>
-            </div>
-            <div className=" text-white flex gap-3 items-center mr-5 cursor-default ">
-              <motion.span whileTap={{ scale: 0.8 }}>-</motion.span>
-              <motion.span whileTap={{ scale: 0.8 }}>1</motion.span>
-              <motion.span whileTap={{ scale: 0.8 }}>+</motion.span>
-              <motion.span
-                whileTap={{ scale: 0.8 }}
-                className=" bg-[#e80013] py-[2px] px-[2px] rounded-md "
-              >
-                <MdDelete />
-              </motion.span>
-            </div>
-          </div>
-
-          <div className=" flex items-center mx-6 rounded-md text-sm bg-[#2e3033] justify-between ">
-            <div className=" flex items-center  text-white gap-2  ml-5 ">
-              <img src={fruits2} alt="ice-cream" className=" w-20 " />
-              <div className="flex flex-col">
-                <p>Banana</p>
-                <p>
-                  <span className=" text-[#e80013] ">$</span> 22.99
-                </p>
-              </div>
-            </div>
-            <div className=" text-white flex gap-3 items-center mr-5 cursor-default ">
-              <motion.span whileTap={{ scale: 0.8 }}>-</motion.span>
-              <motion.span whileTap={{ scale: 0.8 }}>1</motion.span>
-              <motion.span whileTap={{ scale: 0.8 }}>+</motion.span>
-              <motion.span
-                whileTap={{ scale: 0.8 }}
-                className=" bg-[#e80013] py-[2px] px-[2px] rounded-md "
-              >
-                <MdDelete />
-              </motion.span>
-            </div>
-          </div>
-
-          <div className=" flex items-center mx-6 rounded-md text-sm bg-[#2e3033] justify-between ">
-            <div className=" flex items-center  text-white gap-2  ml-5 ">
-              <img src={fruits2} alt="ice-cream" className=" w-20 " />
-              <div className="flex flex-col flex-wrap ">
-                <p>Chicken Fried Rice</p>
-                <p>
-                  <span className=" text-[#e80013] ">$</span> 22.99
-                </p>
-              </div>
-            </div>
-            <div className=" text-white flex gap-3 items-center mr-5 cursor-default ">
-              <motion.span whileTap={{ scale: 0.8 }}>-</motion.span>
-              <motion.span whileTap={{ scale: 0.8 }}>1</motion.span>
-              <motion.span whileTap={{ scale: 0.8 }}>+</motion.span>
-              <motion.span
-                whileTap={{ scale: 0.8 }}
-                className=" bg-[#e80013] py-[2px] px-[2px] rounded-md "
-              >
-                <MdDelete />
-              </motion.span>
-            </div>
-          </div>
+         
         </div>
 
         {/* total and checkout */}
@@ -116,7 +60,7 @@ export default function Cart(props) {
             <p>Sub Total </p>
             <p>-</p>
             <p>
-              <span className=" text-[#e80013] ">$</span> 2542.99
+              <span className=" text-[#e80013] ">$</span> {totalPrice.toFixed(2)}
             </p>
           </div>
 
@@ -124,7 +68,7 @@ export default function Cart(props) {
             <p>Delivery</p>
             <p>-</p>
             <p>
-              <span className=" text-[#e80013] ">$</span> 2542.99
+              <span className=" text-[#e80013] ">$</span> {totalPrice.toFixed(2)}
             </p>
           </div>
 
@@ -133,7 +77,7 @@ export default function Cart(props) {
             <p>TOTAL</p>
             <p>-</p>
             <p>
-              <span className=" text-[#e80013] ">$</span> 2542.99
+              <span className=" text-[#e80013] ">$</span> {totalPrice.toFixed(2)}
             </p>
           </div>
 
@@ -141,7 +85,7 @@ export default function Cart(props) {
             whileTap={{ scale: 0.8 }}
             className=" cursor-pointer py-2   w-[85%] mx-auto  px-2  flex justify-center  text-[18px] text-white bg bg-gradient-to-r from-orange-300  rounded-[20px] to-orange-400 "
           >
-            Checkout $2562.99
+            Checkout ${totalPrice.toFixed(2)}
           </motion.div>
         </div>
       </div>

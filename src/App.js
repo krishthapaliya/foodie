@@ -6,9 +6,12 @@ import MenuBar from "./Menu/MenuBar";
 import Services from "./Services/Services";
 import AboutUs from "./About us/AboutUs";
 
+import ContextProvider from "./Context/ContextProvider";
+
 
 function App() {
   return (
+    <ContextProvider>
     <BrowserRouter>
     <Routes>
       <Route path="/Foodie/" >
@@ -20,6 +23,7 @@ function App() {
       </Route>
     </Routes>
   </BrowserRouter>
+  </ContextProvider>
   );
 }
 

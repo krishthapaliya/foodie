@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import AllData from './AllData';
 import { MdOutlineAddShoppingCart } from 'react-icons/md';
 import { motion } from 'framer-motion';
-import CartArray from '../Cart/CartArray';
+// import CartArray from '../Cart/CartArray';
+import {usePost} from '../../Context/ContextProvider'
 
 export default function AllDish() {
-  const [cartItems, setCartItems] = useState([]);
+  // const [cartItems, setCartItems] = useState([]);
+  const {Added, setAdded} = usePost();
 
   const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
+    setAdded([...Added, item]);
   };
   // console.log(cartItems);
 
@@ -25,7 +27,7 @@ export default function AllDish() {
                 <motion.div whileHover={{ scale: 1.1 }}>
                   <MdOutlineAddShoppingCart
                     className="w-10 h-10 p-2 rounded-full bg-red-600 text-white"
-                    onClick={() => addToCart({ id, heading, text, price, image })}
+                    onClick={() => addToCart({ id, heading, text, price, image, count: 1 })}
                   />
                 </motion.div>
               </div>
@@ -41,7 +43,7 @@ export default function AllDish() {
           );
         })}
       </div>
-      <div className="hidden"><CartArray cartItemsObject={cartItems} /></div>
+      {/* <div className="hidden"><CartArray cartItemsObject={cartItems} /></div> */}
       
     </div>
   );

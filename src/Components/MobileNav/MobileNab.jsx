@@ -2,8 +2,12 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { MdOutlineRestaurantMenu, MdShoppingBasket } from "react-icons/md";
+import { usePost } from '../../Context/ContextProvider';
+
+
 
 export default function MobileNab(props) {
+  const {Added} =usePost()
   const hideMenuButton = props.hideMenu;
   const showCart =props.show;
   return (
@@ -29,7 +33,7 @@ export default function MobileNab(props) {
          
             <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-cartNumBg flex items-center justify-center">
               <p className="text-sm text-white font-semibold">
-                3
+              {Added.length}
               </p>
             </div>
          

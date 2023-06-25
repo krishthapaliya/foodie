@@ -4,10 +4,13 @@ import { FiLogIn } from "react-icons/fi";
 import { motion } from "framer-motion";
 // import { HiOutlineBars3BottomLeft } from "react-icons/hi";
 
+
 import { HiBars3BottomLeft } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import { usePost } from "../../Context/ContextProvider";
 
 export default function Navbar(props) {
+  const {Added}  = usePost()
   const buttonClick =props.isClicked;
   const buttonClick2 =props.isShow;
   const MenuShowButton = props.isMenuShow;
@@ -88,7 +91,7 @@ export default function Navbar(props) {
             <div onClick={buttonClick}  className=" flex items-center relative ">
               <IoMdBasket className=" text-[24px] " />
               <p className=" flex items-center absolute  right-[-4px] top-[-4px] justify-center p-2 bg-red-600 rounded-[100px] text-white text-[14px] h-4 w-4 ">
-                3
+                {Added.length}
               </p>
             </div>
           </motion.li>
